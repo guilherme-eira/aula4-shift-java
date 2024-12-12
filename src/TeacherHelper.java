@@ -1,11 +1,12 @@
+import java.util.Scanner;
 import java.util.Random;
 
 public class TeacherHelper {
 
-    public static final double horaAula = 17.50;
+    //public static final double horaAula = 17.50;
     public static void main(String[] args) {
         int opcao=0, numeroAulas, qtdeAlunos, i;
-        double salarioBase, horaAtividade, descansoSemanalRemunerado, salario, notaAluno, mediaAlunos;
+        double salarioBase, horaAtividade, descansoSemanalRemunerado, salario, notaAluno, mediaAlunos, horaAula;
 
         Random gerador = new Random();
 
@@ -26,6 +27,8 @@ public class TeacherHelper {
                      * http://www1.sinprosp.org.br/guia_consultas.asp?mat=8*/
                     System.out.println("Para calcular seu salário base precisamos saber quantas aulas semanais o professor tem na instituição");
                     numeroAulas = leitor.nextInt();
+                    System.out.println("Informa o valor da hora-aula praticado pela instituição:");
+                    horaAula = leitor.nextDouble();
                     salarioBase = numeroAulas * 4.5 * horaAula;
                     horaAtividade = salarioBase * 0.05;
                     descansoSemanalRemunerado = (salarioBase + horaAtividade) / 6;
