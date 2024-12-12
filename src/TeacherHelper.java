@@ -46,10 +46,11 @@ public class TeacherHelper {
                     qtdeAlunos = leitor.nextInt();
                     i = 0;
                     mediaAlunos=0;
-                    while (i<qtdeAlunos) {
+                    while (i < qtdeAlunos) {
                         System.out.println("Digite a nota do " + (i+1) + "º aluno:");
                         notaAluno = leitor.nextDouble();
                         mediaAlunos = mediaAlunos + notaAluno;
+                        i++;
                     }
                     mediaAlunos = mediaAlunos / qtdeAlunos;
                     System.out.println("A média de notas dos alunos dessa turma é " + mediaAlunos);
