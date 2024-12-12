@@ -5,19 +5,20 @@ public class TeacherHelper {
 
     //public static final double horaAula = 17.50;
     public static void main(String[] args) {
-        int opcao=0, numeroAulas, qtdeAlunos, i;
+        int opcao = 0, numeroAulas, qtdeAlunos, i;
         double salarioBase, horaAtividade, descansoSemanalRemunerado, salario, notaAluno, mediaAlunos, horaAula;
 
         Random gerador = new Random();
 
         Scanner leitor = new Scanner(System.in);
 
-        while(opcao!=4) {
+        while (opcao != 4) {
             System.out.println("FERRAMENTA DE AUXÍLIO AO PROFESSOR!");
             System.out.println("Selecione a opção desejada:");
             System.out.println("1 - Calcular salário");
             System.out.println("2 - Calcular média de notas dos alunos");
             System.out.println("3 - Exibir a motivação do dia!");
+            System.out.println("4 - Sair");
             opcao = leitor.nextInt();
 
             switch (opcao) {
@@ -41,13 +42,14 @@ public class TeacherHelper {
                     System.out.println("Salário total R$" + salario);
 
                     break;
+
                 case 2:
                     System.out.println("Para calcularmos a média das notas dos alunos é preciso saber, primeiramente, quantos alunos estão na turma:");
                     qtdeAlunos = leitor.nextInt();
                     i = 0;
-                    mediaAlunos=0;
+                    mediaAlunos = 0;
                     while (i < qtdeAlunos) {
-                        System.out.println("Digite a nota do " + (i+1) + "º aluno:");
+                        System.out.println("Digite a nota do " + (i + 1) + "º aluno:");
                         notaAluno = leitor.nextDouble();
                         mediaAlunos = mediaAlunos + notaAluno;
                         i++;
@@ -56,9 +58,12 @@ public class TeacherHelper {
                     System.out.println("A média de notas dos alunos dessa turma é " + mediaAlunos);
 
                     break;
-                case 3:
 
-                    switch(gerador.nextInt(7)) {
+                case 3:
+                    switch (gerador.nextInt(7)) {
+                        case 0:
+                            System.out.println("Não há bug que você não possa superar!");
+                            break;
                         case 1:
                             System.out.println("Você é um professor incrível!");
                             break;
@@ -77,10 +82,10 @@ public class TeacherHelper {
                         case 6:
                             System.out.println("Obrigado por se colocar à disposição do saber!");
                             break;
-
                     }
 
                     break;
+
                 case 4:
                     System.out.println("Encerrando o sistema...");
                     break;
